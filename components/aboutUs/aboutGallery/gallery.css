@@ -1,0 +1,55 @@
+/* Copyright (c) 2023, Radome Technologies and Services Private Limited
+All rights reserved.
+
+FileName: gallery.css
+Description: gallery style using css its depend AboutGalleryContainer
+Author: Nithish Kumar,
+Revision dates: 11-05-2023,
+List of methods/Functions/Classes/components: NIL
+Approved by: Ajit,
+Date of Approval: 11-05-2023,
+
+Redistribution and use in source and binary forms, with or without modification, are strictly prohibited without prior written permission from Radome Technologies and Services Private Limited */
+
+
+/* Slideshow */
+
+.slideshow {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+    width: 100%;
+}
+
+.slide {
+    display: inline-block;
+    height: 400px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Buttons */
+
+.slideshowDots {
+    text-align: center;
+}
+
+.slideshowDot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    margin: 15px 7px 0px;
+
+    background-color: #c4c4c4;
+}
+
+.slideshowDot.active {
+    background-color: #2dbece;
+}
