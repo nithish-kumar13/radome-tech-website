@@ -45,6 +45,11 @@ const HeaderContainer = (props) => {
           image: "/assets/header_smartQC.png",
           path: "/products/smartQC",
         },
+        {
+          title: "Retail AI",
+          image: "/assets/small-logo.png",
+          path: "http://49.207.60.103:8081/",
+        },
       ],
     },
     {
@@ -278,7 +283,7 @@ const HeaderContainer = (props) => {
                         alt="arrow-left-icon"
                         src={item.image}
                         sx={{
-                          width: 100,
+                          width: i === 3 ? 100 : 100,
                           height: 100,
                           position: "relative",
                           backgroundPosition: "center",
