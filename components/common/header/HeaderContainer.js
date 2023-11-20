@@ -45,11 +45,11 @@ const HeaderContainer = (props) => {
           image: "/assets/header_smartQC.png",
           path: "/products/smartQC",
         },
-        {
-          title: "Retail AI",
-          image: "/assets/small-logo.png",
-          path: "http://49.207.60.103:8081/",
-        },
+        // {
+        //   title: "Retail AI",
+        //   image: "/assets/small-logo.png",
+        //   path: "http://49.207.60.103:8081/",
+        // },
       ],
     },
     {

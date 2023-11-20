@@ -1,6 +1,7 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
 import { Box, Container, Flex, Image, Text } from "theme-ui";
+import Marquee from "react-fast-marquee";
 
 const DesktopView = () => {
   const achievementData = [
@@ -60,7 +61,7 @@ const DesktopView = () => {
     },
   ];
   return (
-    <Box sx={{ background: "bg", mb: "30%" }}>
+    <Box sx={{ background: "bg", mb: "35%" }}>
       <Container
         sx={{
           maxWidth: "desktopContainer",
@@ -84,15 +85,12 @@ const DesktopView = () => {
             src="assets/trophy.json"
             style={{ height: "300px", width: "300px" }}
           />
-          <Flex
+          {/* <Flex
             sx={{
               flexDirection: "row",
               overflowX: "scroll",
               gap: 30,
-              position: "absolute",
-              top: 400,
-              left: 0,
-              right: 0,
+              
               marginLeft: "auto",
               marginRight: "auto",
               width: "94%",
@@ -136,7 +134,59 @@ const DesktopView = () => {
                 </Flex>
               );
             })}
-          </Flex>
+          </Flex> */}
+          <Marquee
+            speed={100}
+            gradientWidth={"0px"}
+            style={{
+              minWidth: 992,
+              marginLeft: "auto",
+              marginRight: "auto",
+              position: "absolute",
+              top: 400,
+              left: 0,
+              right: 0,
+            }}
+          >
+            {achievementData.map((item, i) => {
+              return (
+                <Flex
+                  key={i}
+                  sx={{
+                    width: 300,
+                    height: 400,
+                    maxHeight: "100%",
+                    background: "#fff",
+                    padding: 20,
+                    borderRadius: 10,
+                    boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    mb: 5,
+                    mx: 10,
+                  }}
+                >
+                  <Box sx={{ flex:1 }}>
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      sx={{
+                        width: "100%",
+                        height: "auto",
+                        padding: 20,
+                        mb: 30,
+                      }}
+                      loading="lazy"
+                    />
+                  </Box>
+                  <Text sx={{ flex: 1 }}>{item.title}</Text>
+                  <Text sx={{ flex: 1 }}>{item.subtitle}</Text>
+                  <Text sx={{ flex: 1 }}>{item?.year}</Text>
+                </Flex>
+              );
+            })}
+          </Marquee>
         </Box>
       </Container>
     </Box>

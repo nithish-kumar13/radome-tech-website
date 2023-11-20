@@ -1,6 +1,7 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
 import { Box, Flex, Image, Text } from "theme-ui";
+import Marquee from "react-fast-marquee";
 
 const MobileView = ({ isTablet }) => {
   const achievementData = [
@@ -60,11 +61,11 @@ const MobileView = ({ isTablet }) => {
     },
   ];
   return (
-    <Box sx={{ background: "bg", mb: "80%" }}>
+    <Box sx={{ background: "bg", mb: "90%" }}>
       <Flex
         sx={{
           position: "relative",
-          mb: 225,
+          mb: 350,
           py: 30,
           px: 30,
           display: "flex",
@@ -82,7 +83,7 @@ const MobileView = ({ isTablet }) => {
             src="assets/trophy.json"
             style={{ height: "200px", width: "200px" }}
           />
-          <Flex
+          {/* <Flex
             sx={{
               flexDirection: "row",
               overflowX: "scroll",
@@ -134,7 +135,59 @@ const MobileView = ({ isTablet }) => {
                 </Flex>
               );
             })}
-          </Flex>
+          </Flex> */}
+          <Marquee
+            speed={100}
+            gradientWidth={"0px"}
+            style={{
+              maxWidth: "100%",
+              marginLeft: "auto",
+              marginRight: "auto",
+              position: "absolute",
+              top: 250,
+              left: 0,
+              right: 0,
+            }}
+          >
+            {achievementData.map((item, i) => {
+              return (
+                <Flex
+                  key={i}
+                  sx={{
+                    maxWidth: isTablet ? 250 : 250,
+                    height: 350,
+                    background: "#fff",
+                    padding: 20,
+                    borderRadius: 10,
+                    boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
+                    flex: 1,
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    mb: 5,
+                    mx: 10,
+                  }}
+                >
+                  <Box sx={{ width: 100, height: 100 }}>
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      sx={{
+                        width: "100%",
+                        height: "auto",
+                        padding: 20,
+                        mb: 10,
+                      }}
+                      loading="lazy"
+                    />
+                  </Box>
+                  <Text sx={{ flex: 1 }}>{item.title}</Text>
+                  <Text sx={{ flex: 1 }}>{item.subtitle}</Text>
+                  <Text sx={{ flex: 1 }}>{item?.year}</Text>
+                </Flex>
+              );
+            })}
+          </Marquee>
         </Box>
       </Flex>
     </Box>
