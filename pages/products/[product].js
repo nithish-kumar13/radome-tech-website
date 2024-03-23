@@ -56,60 +56,7 @@ const Product = () => {
         <Section data={productData.sections} />
         <FlowExplain data={productData.flow} title={"Flow"} />
         <Benefits data={productData.benefits} />
-        {productLinkPopUp && product === "proHM" && (
-          <Flex
-            sx={{
-              position: "fixed",
-              bottom: [2, 2, 10],
-              right: [2, 2, 10],
-              background: "white",
-              padding: 15,
-              minWidth: [0, 0, 200],
-              maxWidth: [200, 200, 0],
-              height: [350, 350, 300],
-              borderRadius: 10,
-              flexDirection: "column",
-              zIndex: "99",
-              gap: 15,
-              opacity: productLinkPopUp ? 1 : 0,
-              transform: productLinkPopUp ? "scale(1)" : "scale(0.8)",
-              transition: "opacity 1s ease-in-out, transform 1s ease-in-out",
-              boxShadow:
-                "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-            }}
-          >
-            <Image
-              src="/assets/close.png"
-              sx={{
-                alignSelf: "flex-end",
-                minWidth: 30,
-                height: 30,
-                cursor: "pointer",
-              }}
-              alt="close-image"
-              loading="lazy"
-              onClick={() => setProductLinkPopUp(!productLinkPopUp)}
-            />
-            <Image
-              src="/assets/header_proHM.png"
-              alt="proHM"
-              sx={{
-                maxWidth: ["100%", "100%", 130],
-                height: "auto",
-                alignSelf: "center",
-                my: "4px",
-              }}
-              loading="lazy"
-            />
-            <Button
-              variant="outline_primary"
-              onClick={() => router.push("mailto:hr@radometech.com")}
-              sx={{ borderColor: "#252525", color: "#252525", minWidth: 100 }}
-            >
-              Demo
-            </Button>
-          </Flex>
-        )}
+        
       </Layout>
     </>
   );
